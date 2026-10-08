@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f5f4ee"><meta name="description" content="Music Decks — music theory through active recall">
+  <title>Music Decks</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="./"><span class="logo" aria-hidden="true">♮</span><span>Music Decks<small>LEARN. RECALL. PLAY.</small></span></a><nav><button id="practice-tab" class="tab active"></button><button id="library-tab" class="tab"></button></nav><span class="local-label" id="saved-label"></span><button id="language" class="language-button"></button></header>
+  <main>
+    <section id="practice-view">
+      <div id="setup"><div class="page-title"><div><p class="eyebrow">YOUR DAILY MUSIC PRACTICE</p><h1 id="welcome"></h1></div><div class="daily-note"><span>♬</span></div></div><div class="section-heading"><h2 id="choose-title"></h2><button id="select-all" class="text-button"></button></div><div id="deck-selection"></div><div class="start-row"><span id="pool-count" class="muted"></span><button id="start" class="primary"></button></div><button id="manage-link" class="manage-link"></button></div>
+      <div id="session" hidden><div class="session-top"><button id="end-session" class="text-button"></button><span id="session-count"></span></div><div class="practice-card"><div class="question-meta"><span id="question-deck" class="pill"></span><span id="review-badge" class="muted small"></span></div><p class="eyebrow" id="question-label"></p><div class="sequence-line"><div id="question-text"></div><span class="sequence-colon">:</span><div id="answer-slots" role="group"></div></div><div class="audio-controls"><button id="question-play" class="text-button"></button><label><input type="checkbox" id="auto-sound"><span id="auto-sound-label"></span></label><label><input type="checkbox" id="include-question"><span id="include-question-label"></span></label></div><div id="virtual-keyboard"></div><div id="sequence-actions"><button id="backspace" class="text-button"></button><button id="clear-answer" class="text-button"></button></div><div id="feedback" role="status" aria-live="polite"></div><div class="answer-actions"><button id="skip" class="text-button"></button><button id="submit" class="primary"></button></div><button id="full-play" class="secondary play-button" hidden></button></div><div class="session-bottom"><span id="session-score"></span><span id="infinite-label"></span></div></div>
+      <div id="results" class="results-card" hidden><p class="eyebrow">PRACTICE SAVED</p><h1 id="result-title"></h1><p id="results-message" class="muted"></p><div class="result-stats" id="result-stats"></div><div id="result-errors"></div><div class="result-actions"><button id="retry-errors" class="secondary"></button><button id="back-setup" class="primary"></button></div></div>
+    </section>
+    <section id="library-view" hidden><div class="page-title"><div><p class="eyebrow">YOUR PERSONAL LIBRARY</p><h1 id="library-title"></h1></div><button id="new-deck" class="primary"></button></div><div class="library-layout"><aside id="library-decks"></aside><div class="library-panel" id="library-content"></div></div><div class="backup-bar"><p id="backup-description"></p><div><button id="export" class="secondary"></button><button id="import" class="secondary"></button><input id="import-file" type="file" accept=".json,application/json" hidden></div></div></section>
+  </main>
+  <footer><span>MUSIC DECKS</span><span id="footer-copy"></span></footer>
+  <dialog id="editor"><form id="editor-form"><div class="dialog-head"><h2 id="editor-title"></h2><button type="button" id="close-editor" class="icon-button">×</button></div><div id="editor-fields"></div><p id="editor-error" class="error-text" role="alert"></p><div class="dialog-actions"><button type="button" id="cancel-editor" class="secondary"></button><button id="save-editor" class="primary" type="submit"></button></div></form></dialog>
+  <dialog id="confirm-dialog"><h2 id="confirm-title"></h2><p id="confirm-body" class="muted"></p><div class="dialog-actions"><button id="confirm-cancel" class="secondary"></button><button id="confirm-ok" class="primary"></button></div></dialog>
+  <div id="toast" role="status" hidden></div><script type="module" src="./app.mjs"></script>
+</body>
+</html>
